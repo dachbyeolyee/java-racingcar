@@ -28,12 +28,14 @@ public class SetTest {
     @Test
     @DisplayName("요구사항 1 : size() 메소드를 활용해 Set의 크기를 확인하는 학습테스트를 구현")
     void size() {
-    	assertThat(numbers.size()).isEqualTo(3);
+    	//assertThat(numbers.size()).isEqualTo(3);
+    	assertThat(numbers).hasSize(3);
+    	
     }
     
     @DisplayName("요구사항 2 : contains() 메소드를 활용해 1, 2, 3의 값이 존재하는지를 확인하는 학습테스트를 구현")
     @ParameterizedTest
-    @ValueSource(ints = {1,2,3,4})
+    @ValueSource(ints = {1,2,3})
     void contains(int num) {
 
     	assertThat(numbers.contains(num)).isTrue();
